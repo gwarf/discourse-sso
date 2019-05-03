@@ -19,7 +19,7 @@ Requirements
 Role Variables
 --------------
 
-Variables are used to tune the Rails application that runs Discourse. These are in a template, and set in the `defaults/main.yml` and `vars/main.yml` file. Please read them and set them accordingly in `vars/main.yml`
+Variables are used to tune the Rails application that runs Discourse. These are in a template, and set in the `defaults/main.yml` file. Please read them and set them accordingly in your playbook
 
   - `db_shared_buffer_size`
   - `unicorn_workers`
