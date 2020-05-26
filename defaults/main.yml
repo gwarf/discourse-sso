@@ -10,6 +10,10 @@ prerequisites:
     - git
     - vim
 
+# which user will run discourse ?
+discourse_user: discourse
+# where will discourse be cloned to
+discourse_path: /home/discourse/discourse
 # Buffer size in MB
 db_shared_buffer_size: 256
 unicorn_workers: 2
@@ -28,5 +32,32 @@ discourse_templates:
   - sshd
   - web.ratelimited
 
+# add plugins here.
+# only the url is used in the template app.yml.j2.
+# The other fields are to help you remember what they are and why you
+# what them.
+discourse_plugins:
+  - name: Discourse Data Explorer
+    description: Allows better querying of Discourse database
+    url: https://github.com/discourse/discourse-data-explorer.git
+  - name: "Discourse Solved ✔"
+    description: "Allows you to mark posts as solutions"
+    url: https://github.com/discourse/discourse-solved.git
+  - name: Slack plugin
+    description: "Discourse to slack plugin"
+    url: https://github.com/bernd/discourse-slack-plugin.git
+  - name: Checklist
+    description: "For when you need to render checklists"
+    url: https://github.com/cpradio/discourse-plugin-checklist
+  - name: Spreadsheet
+    description: "Import google docs spreadsheets to preview them."
+    url: https://github.com/tcreativo/plugin_discourse_spreadsheet.git
+
 # Do you actually want to launch ?
 launch: false
+
+# this is the path to the installation of DiscourseSSO app
+discourse_sso_install_path: /var/www/discourseSSO
+
+# get this from the app
+discourse_secret_key: test_key
